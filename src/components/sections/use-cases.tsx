@@ -48,7 +48,7 @@ export function UseCases() {
             <div className="mx-auto max-w-7xl px-6">
                 <div className="text-center mb-16 md:mb-20">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-4">
-                        Cellstack supports a broad range of <span className="text-primary">GTM use cases</span>
+                        Explore your <span className="text-primary">GTM use cases</span>
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                         From pipeline analysis to team productivity, get <span className="text-primary font-medium">instant answers</span> to your most critical business questions
