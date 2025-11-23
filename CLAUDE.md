@@ -36,7 +36,7 @@ Light Mode (White, Blue)
 
 <Page content structure>
 <NavigationBar>
-Logo | Features | Solution | About | Book a Demo
+Logo | Solution | Features | Explore | Join Us
 </NavigationBar>
 <Hero section>
 Title: Instant insights for any GTM query
@@ -61,21 +61,21 @@ Turn insights into action with one click sharing to slack, email or WhatsApp mes
  Pipeline & conversion analyses: Understand how deals progress, where they stall & what drives conversion
 a.       “Where are deals getting stiuck in the mid funnel and why?”
 
-2.         Territory & coverage planning: Ensure balanced coverage. Optimize quota distribution and identify whitespace.
+2.          Territory & coverage planning: Ensure balanced coverage. Optimize quota distribution and identify whitespace.
 
     a. “Where do we have coverage gaps by region or segment?”
 
-3.         Customer data analyses: Understand acquisition, activation and retention patterns to improve life cycle health
+3.          Customer data analyses: Understand acquisition, activation and retention patterns to improve life cycle health
 
     a. “Which customer segments show the highest renewal rate? What products were sold to them previously to build customer stickiness?
 
-4.         Channel and partner insights: Track performance, measure ROI and maximize partner-led revenue
+4.          Channel and partner insights: Track performance, measure ROI and maximize partner-led revenue
 
     a. “Which partners drive highest sourced revenue? What is unique about these partners?
 
-5.         Productivity and team efficiency: Identify what drives rep performance and optimize resource allocation
+5.          Productivity and team efficiency: Identify what drives rep performance and optimize resource allocation
     a. “What is unique in the way our top sales rep are selling and how can we replicate that for the rest of the team?
-6.         And More
+6.          And More
     a. Cellstack delivers instant insights across every GTM workflow
     </Cellstack supports a broad range of GTM use cases>
 

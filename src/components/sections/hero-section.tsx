@@ -119,7 +119,7 @@ export function HeroSection() {
                                 },
                                 ...transitionVariants,
                             }}>
-                            <div className="relative mt-16 overflow-hidden px-2 sm:mt-20 md:mt-24">
+                            <div className="relative mt-16 mb-16 overflow-hidden px-2 sm:mt-20 md:mt-24 md:mb-24">
                                 <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-border/50 bg-card p-4 shadow-xl shadow-primary/5 ring-1 ring-border/50">
                                     <div className="aspect-video relative rounded-xl bg-muted flex items-center justify-center">
                                         <p className="text-muted-foreground text-sm">Product Mockup Placeholder</p>
