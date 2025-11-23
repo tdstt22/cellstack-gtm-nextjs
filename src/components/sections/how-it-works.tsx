@@ -221,10 +221,12 @@ function AskAnythingAnimation() {
 
 function ShareAnimation() {
     const platforms = [
-        { icon: Send, label: 'Slack', angle: -45, color: 'text-purple-500' },
-        { icon: Mail, label: 'Email', angle: 0, color: 'text-blue-500' },
-        { icon: Share2, label: 'WhatsApp', angle: 45, color: 'text-green-500' },
+        { icon: Send, label: 'Slack', angle: -45, color: 'text-purple-500', finalY: -70 },
+        { icon: Mail, label: 'Email', angle: 0, color: 'text-blue-500', finalY: 0 },
+        { icon: Share2, label: 'WhatsApp', angle: 45, color: 'text-green-500', finalY: 70 },
     ]
+
+    const stackDistance = 150 // Distance to the right of the card
 
     return (
         <div className="relative w-full max-w-sm h-64 flex items-center justify-center">
@@ -242,31 +244,35 @@ function ShareAnimation() {
                 </div>
             </motion.div>
 
-            {/* Share icons radiating out */}
+            {/* Share icons - fade in at final stacked positions */}
             {platforms.map((platform, i) => {
-                const distance = 120
-                const x = distance * Math.cos((platform.angle * Math.PI) / 180)
-                const y = distance * Math.sin((platform.angle * Math.PI) / 180)
-
                 return (
                     <motion.div
                         key={i}
-                        className="absolute inset-0 m-auto w-14 h-14"
-                        initial={{ scale: 0, x: 0, y: 0, opacity: 0 }}
+                        className="absolute w-14 h-14 z-20"
+                        style={{
+                            left: '50%',
+                            top: '50%',
+                            marginLeft: '-28px',
+                            marginTop: '-28px',
+                            x: stackDistance,
+                            y: platform.finalY,
+                        }}
+                        initial={{
+                            opacity: 0,
+                            scale: 0.8
+                        }}
                         animate={{
-                            scale: 1,
-                            x,
-                            y,
-                            opacity: 1
+                            opacity: 1,
+                            scale: 1
                         }}
                         transition={{
-                            delay: 1 + (i * 0.2),
-                            duration: 0.5,
-                            type: "spring",
-                            stiffness: 200
+                            delay: 1 + (i * 0.15),
+                            duration: 0.4,
+                            ease: "easeOut"
                         }}
                     >
-                        <div className="w-full h-full bg-card border-2 border-primary/30 rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
+                        <div className="w-full h-full bg-card border-2 border-primary/30 rounded-lg flex items-center justify-center shadow-md">
                             <platform.icon className={`h-6 w-6 ${platform.color}`} />
                         </div>
                     </motion.div>
