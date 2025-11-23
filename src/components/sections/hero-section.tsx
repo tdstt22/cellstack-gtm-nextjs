@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
@@ -54,7 +55,7 @@ export function HeroSection() {
                             className={cn(
                                 "absolute inset-0 h-full w-full -z-10",
                                 "fill-primary/5 stroke-primary/10",
-                                "[mask-image:radial-gradient(600px_circle_at_50%_25%,white,transparent)]"
+                                "[mask-image:radial-gradient(300px_circle_at_50%_25%,white,transparent)]"
                             )}
                         />
                         <div className="mx-auto max-w-7xl px-6">
@@ -225,11 +226,14 @@ const HeroHeader = () => {
 
 const CellstackLogo = ({ className }: { className?: string }) => {
     return (
-        <div className={cn('flex items-center gap-2', className)}>
-            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <div className="text-primary-foreground font-bold text-lg">C</div>
-            </div>
-            <span className="text-xl font-semibold tracking-tight">Cellstack</span>
+        <div className={cn('flex items-center', className)}>
+            <Image
+                src="/cellstack-logo-with-text.svg"
+                alt="Cellstack"
+                width={150}
+                height={32}
+                className="h-10 w-auto"
+            />
         </div>
     )
 }

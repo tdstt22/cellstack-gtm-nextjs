@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <!-- White Background -->
+  <rect width="800" height="800" fill="white"/>
+  
+  <!-- CellStack Logo - Blue Grid Squares -->
+  <g transform="translate(200, 200)">
+    <!-- Define single square unit size and gap -->
+    <!-- Each square is 90x90 with 10px gap -->
+    
+    <!-- Bottom Row - 4 squares -->
+    <rect x="0" y="300" width="90" height="90" fill="#3b97f5" rx="8"/>
+    <rect x="100" y="300" width="90" height="90" fill="#3b97f5" rx="8"/>
+    <rect x="200" y="300" width="90" height="90" fill="#3b97f5" rx="8"/>
+    <rect x="300" y="300" width="90" height="90" fill="#3b97f5" rx="8"/>
+    
+    <!-- Third Row - 3 squares -->
+    <rect x="100" y="200" width="90" height="90" fill="#3b97f5" rx="8"/>
+    <rect x="200" y="200" width="90" height="90" fill="#3b97f5" rx="8"/>
+    <rect x="300" y="200" width="90" height="90" fill="#3b97f5" rx="8"/>
+    
+    <!-- Second Row - 2 squares -->
+    <rect x="200" y="100" width="90" height="90" fill="#3b97f5" rx="8"/>
+    <rect x="300" y="100" width="90" height="90" fill="#3b97f5" rx="8"/>
+    
+    <!-- Top Row - 1 square -->
+    <rect x="300" y="0" width="90" height="90" fill="#3b97f5" rx="8"/>
+  </g>
+</svg>
