@@ -51,11 +51,11 @@ export function HowItWorks() {
                                 {index % 2 === 0 ? (
                                     <>
                                         <TextContent step={step} />
-                                        <AnimationContent step={step} index={index} />
+                                        <AnimationContent index={index} />
                                     </>
                                 ) : (
                                     <>
-                                        <AnimationContent step={step} index={index} />
+                                        <AnimationContent index={index} />
                                         <TextContent step={step} />
                                     </>
                                 )}
@@ -86,7 +86,7 @@ function TextContent({ step }: { step: typeof steps[0] }) {
     )
 }
 
-function AnimationContent({ step, index }: { step: typeof steps[0], index: number }) {
+function AnimationContent({ index }: { index: number }) {
     return (
         <div className="bg-muted/20 p-8 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[400px]">
             {index === 0 && <ConnectDataAnimation />}
