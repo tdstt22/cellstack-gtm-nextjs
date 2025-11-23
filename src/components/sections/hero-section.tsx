@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
+import { GridPattern } from '@/components/ui/grid-pattern'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -34,6 +35,28 @@ export function HeroSection() {
             <main className="overflow-hidden">
                 <section>
                     <div className="relative pt-24 md:pt-36">
+                        <GridPattern
+                            width={40}
+                            height={40}
+                            x={-1}
+                            y={-1}
+                            squares={[
+                                [4, 4],
+                                [5, 1],
+                                [8, 2],
+                                [6, 6],
+                                [10, 10],
+                                [12, 8],
+                                [15, 14],
+                                [3, 9],
+                                [7, 15],
+                            ]}
+                            className={cn(
+                                "absolute inset-0 h-full w-full -z-10",
+                                "fill-primary/5 stroke-primary/10",
+                                "[mask-image:radial-gradient(600px_circle_at_50%_25%,white,transparent)]"
+                            )}
+                        />
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
