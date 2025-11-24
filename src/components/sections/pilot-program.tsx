@@ -81,8 +81,8 @@ export function PilotProgram() {
                                 asChild
                                 size="lg"
                                 className="rounded-[14px] px-8 h-12 text-base">
-                                <Link href="#apply">
-                                    Apply Now
+                                <Link href="/get-started">
+                                    Join Now
                                 </Link>
                             </Button>
                         </div>

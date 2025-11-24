@@ -55,7 +55,7 @@ export function HeroSection() {
                             className={cn(
                                 "absolute inset-0 h-full w-full -z-10",
                                 "fill-primary/5 stroke-primary/10",
-                                "[mask-image:radial-gradient(300px_circle_at_50%_25%,white,transparent)]"
+                                "[mask-image:radial-gradient(350px_circle_at_50%_30%,white,transparent)]"
                             )}
                         />
                         <div className="mx-auto max-w-7xl px-6">
@@ -89,21 +89,11 @@ export function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-6 text-base h-12">
-                                            <Link href="#pilot">
+                                            <Link href="/get-started">
                                                 <span className="text-nowrap">Get Started</span>
                                             </Link>
                                         </Button>
                                     </div>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-12 rounded-xl px-6">
-                                        <Link href="#pilot">
-                                            <span className="text-nowrap">Book a Demo</span>
-                                        </Link>
-                                    </Button>
                                 </AnimatedGroup>
                             </div>
                         </div>
@@ -211,7 +201,7 @@ const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#pilot">
+                                    <Link href="/get-started">
                                         <span>Get Started</span>
                                     </Link>
                                 </Button>
