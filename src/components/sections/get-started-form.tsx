@@ -35,6 +35,7 @@ const roleOptions = [
 export function GetStartedForm() {
     const [isLoading, setIsLoading] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
+    const [error, setError] = useState<string | null>(null)
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -48,19 +49,35 @@ export function GetStartedForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsLoading(true)
+        setError(null)
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500))
+        try {
+            const response = await fetch('/api/neon', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
 
-        setIsLoading(false)
-        setIsSuccess(true)
+            const data = await response.json()
 
-        // Log form data (in production, this would be sent to your backend)
-        console.log('Form submitted:', formData)
+            if (!response.ok || !data.success) {
+                throw new Error(data.error || 'Failed to submit application')
+            }
+
+            setIsSuccess(true)
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'An unexpected error occurred')
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     const handleChange = (field: string, value: string) => {
         setFormData(prev => ({ ...prev, [field]: value }))
+        // Clear error when user starts typing
+        if (error) setError(null)
     }
 
     if (isSuccess) {
@@ -83,6 +100,12 @@ export function GetStartedForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Error Message */}
+            {error && (
+                <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4">
+                    <p className="text-sm text-destructive">{error}</p>
+                </div>
+            )}
             {/* Name fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
