@@ -85,8 +85,8 @@ export default function GetStartedPage() {
                                     Get Started with <span className="text-primary">Cellstack</span>
                                 </h1>
                                 <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-                                    Join our pilot program and transform how your team works with data.
-                                    Fill out the form below and we&apos;ll be in touch within <span className="text-primary font-medium">24 hours</span>.
+                                    Discuss with our team to go over your needs and see how we can transform your GTM decision-making. 
+                                    Enter your details and we&apos;ll be in touch within <span className="text-primary font-medium">24 hours</span>.
                                 </p>
                             </AnimatedGroup>
 

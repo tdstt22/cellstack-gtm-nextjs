@@ -63,7 +63,7 @@ export function GetStartedForm() {
             const data = await response.json()
 
             if (!response.ok || !data.success) {
-                throw new Error(data.error || 'Failed to submit application')
+                throw new Error(data.error || 'Failed to submit')
             }
 
             setIsSuccess(true)
@@ -90,9 +90,9 @@ export function GetStartedForm() {
                 <div className="h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Check className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-2xl font-semibold mb-3">Application Submitted!</h3>
+                <h3 className="text-2xl font-semibold mb-3">Submitted!</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                    Thank you for your interest in Cellstack. We'll review your application and get back to you within 24 hours.
+                    Thank you for your interest in Cellstack. We'll get back to you ASAP.
                 </p>
             </motion.div>
         )
