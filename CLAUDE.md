@@ -2,6 +2,63 @@ You are building a sleek and modern design landing page with clean animations fo
 
 <Development>
 Use highest quality code as if you are an experienced senior engineer when writing. You can assume that I will always have `pnpm run dev` running on localhost:3000 when you're writing the code.
+
+## Build Validation
+ALWAYS run `pnpm run build` after making code changes to ensure:
+- No TypeScript errors
+- No ESLint warnings/errors
+- Build completes successfully
+
+If the build fails, fix ALL issues before considering the task complete.
+
+## Common TypeScript/Linting Issues to Avoid
+
+### 1. Framer Motion Type Errors
+When using Framer Motion animation variants with transition types, ALWAYS use `as const` for the type property:
+
+**CORRECT:**
+```tsx
+transition: {
+  type: 'spring' as const,
+  stiffness: 300,
+  damping: 20
+}
+```
+
+**INCORRECT:**
+```tsx
+transition: {
+  type: 'spring',  // This will cause TypeScript errors
+  stiffness: 300,
+  damping: 20
+}
+```
+
+This applies to ALL animation variants in:
+- Component files (hero-section.tsx, features.tsx, etc.)
+- Page files (get-started/page.tsx, etc.)
+- UI components (animated-group.tsx, etc.)
+
+### 2. ESLint String Escaping
+Always escape apostrophes in JSX text content:
+
+**CORRECT:**
+```tsx
+<p>We&apos;ll be in touch</p>
+```
+
+**INCORRECT:**
+```tsx
+<p>We'll be in touch</p>  // ESLint error
+```
+
+### 3. Pre-Deployment Checklist
+Before completing any task:
+1. Run `pnpm run build`
+2. Verify TypeScript compilation passes
+3. Check that all pages are successfully generated
+4. Fix any ESLint warnings
+5. Ensure no runtime errors in dev mode
 </Development>
 
 <Design>

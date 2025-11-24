@@ -19,7 +19,7 @@ const transitionVariants = {
             filter: 'blur(0px)',
             y: 0,
             transition: {
-                type: 'spring',
+                type: 'spring' as const,
                 bounce: 0.3,
                 duration: 1.5,
             },
@@ -39,7 +39,7 @@ const cardVariants = {
             y: 0,
             filter: 'blur(0px)',
             transition: {
-                type: 'spring',
+                type: 'spring' as const,
                 stiffness: 200,
                 damping: 25,
                 duration: 0.8,
@@ -86,7 +86,7 @@ export default function GetStartedPage() {
                                 </h1>
                                 <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12 leading-relaxed">
                                     Join our pilot program and transform how your team works with data.
-                                    Fill out the form below and we'll be in touch within <span className="text-primary font-medium">24 hours</span>.
+                                    Fill out the form below and we&apos;ll be in touch within <span className="text-primary font-medium">24 hours</span>.
                                 </p>
                             </AnimatedGroup>
 
