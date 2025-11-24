@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Cellstack - Instant insights for any GTM query",
   description: "AI-native BI platform for GTM teams. Connect your data sources and get real-time insights without SQL or programming knowledge.",
+  icons: {
+    icon: '/cellstack-logo.svg',
+  },
 };
 
 export default function RootLayout({
