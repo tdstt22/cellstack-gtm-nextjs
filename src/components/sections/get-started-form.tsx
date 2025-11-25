@@ -52,6 +52,7 @@ export function GetStartedForm() {
         setError(null)
 
         try {
+            // Step 1: Save to database
             const response = await fetch('/api/neon', {
                 method: 'POST',
                 headers: {
@@ -65,6 +66,18 @@ export function GetStartedForm() {
             if (!response.ok || !data.success) {
                 throw new Error(data.error || 'Failed to submit')
             }
+
+            // Step 2: Send confirmation email (idempotent, fire-and-forget)
+            fetch('/api/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    firstName: formData.firstName,
+                    email: formData.email,
+                }),
+            })
 
             setIsSuccess(true)
         } catch (err) {
@@ -92,7 +105,7 @@ export function GetStartedForm() {
                 </div>
                 <h3 className="text-2xl font-semibold mb-3">Submitted!</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                    Thank you for your interest in Cellstack. We'll get back to you ASAP.
+                    Thank you for your interest in Cellstack. We&apos;ll get back to you ASAP.
                 </p>
             </motion.div>
         )

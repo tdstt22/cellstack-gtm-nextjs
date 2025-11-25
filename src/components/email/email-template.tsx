@@ -26,7 +26,7 @@ export function EmailTemplate({ firstName }: EmailTemplateProps) {
           borderBottom: '1px solid #e2e8f0',
         }}>
           <Img
-            src="https://cellstack-gtm-nextjs.vercel.app/cellstack-logo-with-text.svg"
+            src="https://gtm.cellstackai.com/cellstack-logo-with-text.svg"
             alt="Cellstack"
             width="180"
             height="auto"
