@@ -27,6 +27,13 @@ export async function POST(request: NextRequest) {
       to: [email],
       subject: 'Welcome to Cellstack - Your Pilot Program Request',
       react: EmailTemplate({ firstName }),
+      attachments: [
+        {
+          path: 'https://gtm.cellstackai.com/cellstack-logo-with-text.png',
+          filename: 'cellstack-logo-with-text.png',
+          contentId: 'logo-image',
+        },
+      ],
     });
 
     if (error) {

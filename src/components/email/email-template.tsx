@@ -25,12 +25,11 @@ export function EmailTemplate({ firstName }: EmailTemplateProps) {
           padding: '40px 40px 32px',
           borderBottom: '1px solid #e2e8f0',
         }}>
-          <Img
-            src="https://gtm.cellstackai.com/cellstack-logo-with-text.svg"
+          <img
+            src="cid:logo-image"
             alt="Cellstack"
             width="180"
             height="auto"
-            style={{ display: 'block', margin: '0 auto' }}
           />
         </div>
 
