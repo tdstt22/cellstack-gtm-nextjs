@@ -1,5 +1,3 @@
-import { Img } from "@react-email/components";
-
 interface EmailTemplateProps {
   firstName: string;
 }
@@ -24,13 +22,24 @@ export function EmailTemplate({ firstName }: EmailTemplateProps) {
           backgroundColor: '#ffffff',
           padding: '40px 40px 32px',
           borderBottom: '1px solid #e2e8f0',
+          textAlign: 'center' as const,
         }}>
-          <img
-            src="cid:logo-image"
-            alt="Cellstack"
-            width="180"
-            height="auto"
-          />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" width="200" height="auto" style={{ display: 'inline-block', maxWidth: '100%' }}>
+            <rect width="1600" height="500" fill="white"/>
+            <g transform="translate(50, 50)">
+              <rect x="0" y="234" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="78" y="234" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="156" y="234" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="234" y="234" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="78" y="156" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="156" y="156" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="234" y="156" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="156" y="78" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="234" y="78" width="70" height="70" fill="#3b97f5" rx="6"/>
+              <rect x="234" y="0" width="70" height="70" fill="#3b97f5" rx="6"/>
+            </g>
+            <text x="400" y="300" fontFamily="Arial, Helvetica, sans-serif" fontSize="240" fontWeight="bold" fill="#3b97f5">Cellstack</text>
+          </svg>
         </div>
 
         {/* Main content */}
