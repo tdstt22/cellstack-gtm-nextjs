@@ -1,11 +1,13 @@
 'use client'
 
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { GetStartedForm } from '@/components/sections/get-started-form'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { Footer } from '@/components/sections/footer'
+import { cn } from '@/lib/utils'
 
 const transitionVariants = {
     item: {
@@ -50,16 +52,26 @@ const cardVariants = {
 }
 
 export default function GetStartedPage() {
+    const [isScrolled, setIsScrolled] = React.useState(false)
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
         <>
             {/* Header */}
             <header>
                 <nav className="fixed z-20 w-full px-2">
-                    <div className="mx-auto mt-2 max-w-6xl px-6 py-3 lg:py-4 bg-background/80 rounded-2xl border border-border/50 backdrop-blur-xl shadow-sm">
-                        <div className="flex items-center justify-between">
+                    <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/80 max-w-4xl rounded-2xl border border-border/50 backdrop-blur-xl lg:px-5 shadow-sm')}>
+                        <div className="flex items-center justify-between py-3 lg:py-4">
                             <Link href="/" aria-label="Back to home">
                                 <Image
-                                    src="/cellstack-logo-with-text.svg"
+                                    src="/cellstack-logo-transparent.svg"
                                     alt="Cellstack"
                                     width={150}
                                     height={32}

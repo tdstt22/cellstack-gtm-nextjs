@@ -111,9 +111,16 @@ export function HeroSection() {
                                 ...transitionVariants,
                             }}>
                             <div className="relative mt-16 mb-16 overflow-hidden px-2 sm:mt-20 md:mt-24 md:mb-24">
-                                <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-border/50 bg-card p-4 shadow-xl shadow-primary/5 ring-1 ring-border/50">
-                                    <div className="aspect-video relative rounded-xl bg-muted flex items-center justify-center">
-                                        <p className="text-muted-foreground text-sm">Product Mockup Placeholder</p>
+                                <div className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-primary/5 to-primary/10 p-4 shadow-xl shadow-primary/5 ring-1 ring-border/50">
+                                    <div className="relative w-full rounded-xl overflow-hidden">
+                                        <Image
+                                            src="/dashboard-mock.png"
+                                            alt="Cellstack Dashboard - AI-native BI platform interface"
+                                            width={1920}
+                                            height={1080}
+                                            className="w-full h-auto"
+                                            priority
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +225,7 @@ const CellstackLogo = ({ className }: { className?: string }) => {
     return (
         <div className={cn('flex items-center', className)}>
             <Image
-                src="/cellstack-logo-with-text.svg"
+                src="/cellstack-logo-transparent.svg"
                 alt="Cellstack"
                 width={150}
                 height={32}
